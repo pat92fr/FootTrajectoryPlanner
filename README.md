@@ -1,7 +1,7 @@
 # FootTrajectoryPlanner
- Legged robot foot's trajectory planner based on **Bezier curves**.
+ This is a tool for legged robot foot's trajectory planning, based on **Bezier curves**.
  
- Features :
+ Tool features :
  - Compute XZ position velocity and acceleration of foot end according desired robot velocity and gait parameters.
  - Compute position, velocity, and acceleration of joints based on IK and robot geometry.
  - Four different PRESETs including MIT-like Bezier curve.
@@ -125,6 +125,12 @@ The result is very close of the spline curve acceleration along X and Z directio
 
 ![Foot trajectory](https://github.com/pat92fr/FootTrajectoryPlanner/blob/main/02-Result/2022-03-27%20X%20and%20Y%20Bezier%20Curves%20proposed%20by%20Pat92fr.png?raw=true)
 <p align="center">Screenshot. Two Bezier curves analysis.</p>
+
+### Circle trajectory (test)
+
+![Foot trajectory](https://github.com/pat92fr/FootTrajectoryPlanner/blob/main/02-Result/2022-03-27%20Circle%20trajectory%20test.png?raw=true)
+<p align="center">Screenshot. Circle analysis.</p>
+
 
 
 
