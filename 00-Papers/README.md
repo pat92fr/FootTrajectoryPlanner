@@ -1,0 +1,1 @@
+[Step Trajectory and Gait Planner (from MIT cheetah) by Miguel Ayuso Parrilla](https://hackaday.io/project/171456-diy-hobby-servos-quadruped-robot/log/178481-step-trajectory-and-gait-planner-from-mit-cheetah)
