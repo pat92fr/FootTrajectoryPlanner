@@ -70,7 +70,7 @@ The swing phase trajectory based on Bezier curve features a continuous accelerat
 ### X+Z Bezier curves 
 The spline method was too complex for me at the moment. So, I am trying the Bezier curve, and I thought it was possible to obtain the same features than spline curve using Bezier curves: zero acceleration at the begining and the end of swing phase, lower and continuous acceleration in both X and Z axis. I have tried several parameters with one 2D Bezier curve without success. By using separates 1D Bezier curves, one per axis, I think I have got an interesting result, very close of spline.
 
-So, I have defined two 1D Bezier curves (8 control points for X/Y axis, 17 points for Z vertical axis). Coordinates of control points depends on robot actual velocities, swing and stance durations (with overlay), and swing and stance heights.
+So, I have defined **two 1D Bezier curves (8 control points for X/Y axis, 17 points for Z vertical axis)**. Coordinates of control points depends on robot actual velocities, swing and stance durations (with overlay), and swing and stance heights.
 
 ![Foot trajectory](https://github.com/pat92fr/FootTrajectoryPlanner/blob/main/02-Result/XZ%20Dual%20Bezier.png)
 
@@ -110,3 +110,9 @@ So, I have defined two 1D Bezier curves (8 control points for X/Y axis, 17 point
 where :
 
 - dVz/dt : derivative of Z velocity of stance phase trajectory = Hstance\*PI/Tstance
+
+The swing phase trajectory based on these two Bezier curves features a continuous acceleration along both X and Z axis.
+
+![Foot trajectory](https://github.com/pat92fr/FootTrajectoryPlanner/blob/main/02-Result/XZ%20Dual%20Bezier%20Acceleration.png)
+
+*Acceleration plot at 1m/s.*
