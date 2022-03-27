@@ -49,11 +49,11 @@ So, I have defined a 2D Bezier curve with 12 control points. 2D coordinates of c
 
 where :
 
--Tstance : Stance phase duration (s)
--Tswing : Swing phase duration (s)
--Hswing : Swing phase height (m)
--Vx : Desired robot velocity along X axis (longitudinal) (m/s)
--n = 12 : number of control points
+- Tstance : Stance phase duration (s)
+- Tswing : Swing phase duration (s)
+- Hswing : Swing phase height (m)
+- Vx : Desired robot velocity along X axis (longitudinal) (m/s)
+- n = 12 : number of control points
     
 ![Foot trajectory](https://github.com/pat92fr/FootTrajectoryPlanner/blob/main/02-Result/XZ%20Bezier.png)
 
