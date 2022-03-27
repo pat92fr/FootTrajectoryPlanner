@@ -1,8 +1,13 @@
 # FootTrajectoryPlanner
  Legged robot foot's trajectory planner based on **Bezier curves**.
  
+ Features :
+ - Compute XZ position velocity and acceleration of foot end according desired robot velocity and gait parameters (Tstride, Overlay, Hswing..).
+ - Compute position, velocity, and acceleration of joints
+ - Four different PRESETs including MIT-like Bezier curve.
+ 
 ## Usage
-Run the PYthon script **foot_trajectory_planner.py**, select the type of trajectory, and adjust parameters:
+Run the Python3 script **foot_trajectory_planner.py**, select the type of trajectory, and adjust parameters:
 - Desired robot velocity (mm/s)
 - Stride duration (ms)
 - Overlay (%)
