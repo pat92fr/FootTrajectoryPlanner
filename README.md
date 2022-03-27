@@ -61,14 +61,14 @@ where :
 
 In the §3.1, author compares Spline and Bezier curve trajectories : *Comparing the swing phase trajectory acceleration of spline curve with that of the Bézier curve as shown in Figure 13, a curve with continuous acceleration cannot be obtained. Moreover, the acceleration of the Bézier curve at a contact point with the stance phase cannot reach 0, which means that there will be an impact force on the ground, and the maximum value of its acceleration curve is also larger than that in the spline curve. As to the spline curve trajectory, it will be more difficult to obtain the trajectory.*
 
-The swing phase trajectory based on Bezier curve features a continuous acceleration along X axis, but there are velocity and acceleration discontinuities at both ends.
+The swing phase trajectory based on Bezier curve features a continuous acceleration along X direction, but there are **velocity and acceleration discontinuities at both ends alon Z direction**.
 
-![Foot trajectory](https://github.com/pat92fr/FootTrajectoryPlanner/blob/main/02-Result/XZ%20Bezier%20Acceleration.png)
+![Bezier Acceleration](https://github.com/pat92fr/FootTrajectoryPlanner/blob/main/02-Result/XZ%20Bezier%20Acceleration.png)
 
 *Acceleration plot at 1m/s.*
 
 ### X+Z Bezier curves 
-The spline method was too complex for me at the moment. So, I am trying the Bezier curve, and I thought it was possible to obtain the same features than spline curve using Bezier curves: zero acceleration at the begining and the end of swing phase, lower and continuous acceleration in both X and Z axis. I have tried several parameters with one 2D Bezier curve without success. By using separates 1D Bezier curves, one per axis, I think I have got an interesting result, very close of spline.
+The spline method was too complex for me at the moment. So, I am trying the Bezier curve, and I thought it was possible to obtain the same features than spline curve using Bezier curves: zero acceleration at the begining and the end of swing phase, lower and continuous acceleration in both X and Z directions. I have tried several parameters with one 2D Bezier curve without success. By using separates 1D Bezier curves, one per axis, I think I have got an interesting result, very close of spline.
 
 So, I have defined **two 1D Bezier curves (8 control points for X/Y axis, 17 points for Z vertical axis)**. Coordinates of control points depends on robot actual velocities, swing and stance durations (with overlay), and swing and stance heights.
 
@@ -111,16 +111,16 @@ where :
 
 - dVz/dt : derivative of Z velocity of stance phase trajectory = Hstance\*PI/Tstance
 
-The swing phase trajectory based on these two Bezier curves features a continuous acceleration along both X and Z axis. *Houra!*
+The swing phase trajectory based on these two Bezier curves features a continuous acceleration along both X and Z directions. *Houra!*
 
 ![Dual Bezier Acceleration](https://github.com/pat92fr/FootTrajectoryPlanner/blob/main/02-Result/XZ%20Dual%20Bezier%20Acceleration.png)
 
 *Acceleration plot at 1m/s.*
 
-The result is very close of the spline curve acceleration along X and Z axis.
+The result is very close of the spline curve acceleration along X and Z direction.
 
 ![Spline Acceleration](https://github.com/pat92fr/FootTrajectoryPlanner/blob/main/00-Papers/Figure%2013.%20The%20spline%20curve%20acceleration%20X%20and%20Z%20axis.png)
 
-*Acceleration plot at 1..4m/s.*
+*Acceleration plot at 1..4m/s.(a) The acceleration in the X diretion for the spline curve trajectory; (b) The acceleration in the Z direction for the spline curve trajectory*
 
 
