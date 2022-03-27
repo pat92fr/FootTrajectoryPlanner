@@ -755,23 +755,29 @@ class gui:
 
 	def plotter(self):
 
+		plt.plot(self.x_dataset,self.z_dataset)
+		plt.axis('equal')
+		plt.xlabel('X - Position (m)')
+		plt.ylabel('Z - Position (m)')
+		plt.show()
+		
 		plt.plot(np.arange(self.step_s,self.T_swing_s+self.T_stance_s,self.step_s),self.ax_dataset)
-		plt.xlabel('Time (s)')
+		plt.xlabel('Time (ms)')
 		plt.ylabel('X - Acceleration (m/s²)')
 		plt.show()
 
 		plt.plot(np.arange(self.step_s,self.T_swing_s+self.T_stance_s,self.step_s),self.az_dataset)
-		plt.xlabel('Time (s)')
+		plt.xlabel('Time (ms)')
 		plt.ylabel('Z - Acceleration (m/s²)')
 		plt.show()
 
 		plt.plot(np.arange(0,self.T_swing_s+self.T_stance_s,self.step_s),self.vx_dataset)
-		plt.xlabel('Time (s)')
+		plt.xlabel('Time (ms)')
 		plt.ylabel('X - Velocity (m/s)')
 		plt.show()
 
 		plt.plot(np.arange(0,self.T_swing_s+self.T_stance_s,self.step_s),self.vz_dataset)
-		plt.xlabel('Time (s)')
+		plt.xlabel('Time (ms)')
 		plt.ylabel('Z - Velocity (m/s)')
 		plt.show()
 
@@ -785,11 +791,24 @@ class gui:
 		plt.ylabel('Z - Position (m)')
 		plt.show()
 
-		plt.plot(self.x_dataset,self.z_dataset)
-		plt.axis('equal')
-		plt.xlabel('X - Position (m)')
-		plt.ylabel('Z - Position (m)')
+		plt.plot(np.arange(0,self.T_swing_s+self.T_stance_s+self.step_s,self.step_s),self.x_dataset,self.front_hips_dataset)
+		plt.plot(np.arange(0,self.T_swing_s+self.T_stance_s+self.step_s,self.step_s),self.x_dataset,self.rear_hips_dataset)
+		plt.xlabel('Time (ms)')
+		plt.ylabel('Joint Position (degrees)')
 		plt.show()
+
+		plt.plot(np.arange(0,self.T_swing_s+self.T_stance_s+self.step_s,self.step_s),self.x_dataset,self.v_front_hips_dataset)
+		plt.plot(np.arange(0,self.T_swing_s+self.T_stance_s+self.step_s,self.step_s),self.x_dataset,self.v_rear_hips_dataset)
+		plt.xlabel('Time (ms)')
+		plt.ylabel('Joint Velocity (degrees/s)')
+		plt.show()
+
+		plt.plot(np.arange(0,self.T_swing_s+self.T_stance_s+self.step_s,self.step_s),self.x_dataset,self.a_front_hips_dataset)
+		plt.plot(np.arange(0,self.T_swing_s+self.T_stance_s+self.step_s,self.step_s),self.x_dataset,self.a_rear_hips_dataset)
+		plt.xlabel('Time (ms)')
+		plt.ylabel('Joint Acceleration (degrees/s²)')
+		plt.show()
+
 
 
 def main():
