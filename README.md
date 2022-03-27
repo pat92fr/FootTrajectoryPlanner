@@ -2,7 +2,7 @@
  Legged robot foot's trajectory planner based on Bezier curves
  
 ## Usage
-Run foot_trajectory_planner.py, select the type of trajectory, and adjust parameters:
+Run the PYthon script **foot_trajectory_planner.py**, select the type of trajectory, and adjust parameters:
 - robot velocity (mm/s)
 - stride duration (ms)
 - overlay (%)
