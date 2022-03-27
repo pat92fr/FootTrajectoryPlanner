@@ -25,7 +25,7 @@ My very first implementation was based on a **cos(t)** for both the stance and t
 <p align="center">Figure. XZ Foot end trajectory at 1m/s.</p>
 
 ### XZ Bezier curve 
-My second implementation was based on the paper [Leg Trajectory Planning for Quadruped Robots with High-Speed Trot Gait](https://github.com/pat92fr/FootTrajectoryPlanner/blob/main/00-Papers/Leg_Trajectory_Planning_for_Quadruped_Robots_with_.pdf) comparing Bezier and Spline curves. 
+My second implementation was based on the paper [Leg Trajectory Planning for Quadruped Robots with High-Speed Trot Gait](https://github.com/pat92fr/FootTrajectoryPlanner/blob/main/00-Papers/Leg_Trajectory_Planning_for_Quadruped_Robots_with_.pdf) comparing Bezier and Spline curves. This implementation was also inspired from the Miguel Ayuso Parrilla's project log for DIY hobby servos quadruped robot [Step Trajectory and Gait Planner (from MIT cheetah)](https://hackaday.io/project/171456-diy-hobby-servos-quadruped-robot/log/178481-step-trajectory-and-gait-planner-from-mit-cheetah). 
 
 <p align="center"><img src="https://github.com/pat92fr/FootTrajectoryPlanner/blob/main/00-Papers/Figure%2012.%20The%20Bezier%20curve%20trajectory.png"></p>
 
