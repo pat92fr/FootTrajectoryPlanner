@@ -3,17 +3,17 @@
  
 ## Usage
 Run the PYthon script **foot_trajectory_planner.py**, select the type of trajectory, and adjust parameters:
-- robot velocity (mm/s)
-- stride duration (ms)
-- overlay (%)
-- stance/swing heights (mm)
-- robot standing height Z0 (mm)
+- Desired robot velocity (mm/s)
+- Stride duration (ms)
+- Overlay (%)
+- Stance heights (mm)
+- Swing heights (mm)
+- Robot standing height Z0 (mm)
 
 ![Foot trajectory](https://github.com/pat92fr/FootTrajectoryPlanner/blob/main/02-Result/2022-03-27%20X%20and%20Y%20Bezier%20Curves%20proposed%20by%20Pat92fr.png?raw=true)
 
-The control points of Beziers curves maybe adapted. See line 200+ in the Python script.
-
-The inverse kinematic function maybe adapted. It is designed for my 5-bar legged robot called Felin. See IK Python script.
+- Note 1 : The control points of Beziers curves maybe adapted. See line 200+ in the Python script.
+- Note 2 : The *inverse kinematic* function maybe adapted. It is designed for my 5-bar legged robot called Felin. See IK Python script.
 
 ## Purpose
 I was looking for a **smooth swing phase trajectory** for my DIY legged robot, that suits a large range of robot velocity (from 0 to 1 m/s and more). This trajectory shall be computed in real time, and should minimize foot velocity and acceleration, and joint velocity and acceleration, in order to get a good tracking and minimal ground impact force at the begining of the stance phase. 
@@ -30,7 +30,7 @@ My second implementation was based on the paper [Leg Trajectory Planning for Qua
 
 ![Foot trajectory](https://github.com/pat92fr/FootTrajectoryPlanner/blob/main/00-Papers/Figure%2012.%20The%20Bezier%20curve%20trajectory.png)
 
-So, I have defined a 2D Bezier curve with 12 control points. 2D coordinates of control points depends on robot actual velocities, swing and stance durations (with overlay), and swing and stance heights. I got quite good tracking and the raisonable ground impact force at the touch down. 
+So, I have defined a **2D Bezier curve** with 12 control points. 2D coordinates of control points depends on robot actual velocities, swing and stance durations (with overlay), and swing and stance heights. I got quite good tracking and the raisonable ground impact force at the touch down. 
 
 |Pn|X|Z|
 |---|---|---|
@@ -65,7 +65,7 @@ The swing phase trajectory based on Bezier curve features a continuous accelerat
 
 ![Bezier Acceleration](https://github.com/pat92fr/FootTrajectoryPlanner/blob/main/02-Result/XZ%20Bezier%20Acceleration.png)
 
-*Acceleration plot at 1m/s.*
+*XZ Acceleration plot at 1m/s.*
 
 ### X+Z Bezier curves 
 The spline method was too complex for me at the moment. So, I am trying the Bezier curve, and I thought it was possible to obtain the same features than spline curve using Bezier curves: zero acceleration at the begining and the end of swing phase, lower and continuous acceleration in both X and Z directions. I have tried several parameters with one 2D Bezier curve without success. By using separates 1D Bezier curves, one per axis, I think I have got an interesting result, very close of spline.
@@ -115,12 +115,12 @@ The swing phase trajectory based on these two Bezier curves features a continuou
 
 ![Dual Bezier Acceleration](https://github.com/pat92fr/FootTrajectoryPlanner/blob/main/02-Result/XZ%20Dual%20Bezier%20Acceleration.png)
 
-*Acceleration plot at 1m/s.*
+*XZ Acceleration plot at 1m/s.*
 
 The result is very close of the spline curve acceleration along X and Z direction.
 
 ![Spline Acceleration](https://github.com/pat92fr/FootTrajectoryPlanner/blob/main/00-Papers/Figure%2013.%20The%20spline%20curve%20acceleration%20X%20and%20Z%20axis.png)
 
-*Acceleration plot at 1..4m/s.(a) The acceleration in the X diretion for the spline curve trajectory; (b) The acceleration in the Z direction for the spline curve trajectory*
+*XZ Acceleration plot at 1..4m/s.(a) The acceleration in the X diretion for the spline curve trajectory; (b) The acceleration in the Z direction for the spline curve trajectory*
 
 
