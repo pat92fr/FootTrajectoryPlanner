@@ -21,14 +21,14 @@ I was looking for a **smooth swing phase trajectory** for my DIY legged robot, t
 ### Basic curve using math
 My very first implementation was based on a **cos(t)** for both the stance and the swing phases. Such a trajectory causes velocity and acceleration discontinuities at the begining and the end of the stance/swing phases. I got a poor tracking in real experiments, and a high ground impact force at the touch down.
 
-![Foot trajectory](https://github.com/pat92fr/FootTrajectoryPlanner/blob/main/02-Result/XZ%20Cosinus.png)
-
-*XZ Position plot at 1m/s.*
+<p align="center"><img src="https://github.com/pat92fr/FootTrajectoryPlanner/blob/main/02-Result/XZ%20Cosinus.png"></p>
+<p align="center">*XZ Position plot at 1m/s.*</p>
 
 ### XZ Bezier curve 
 My second implementation was based on the paper [Leg Trajectory Planning for Quadruped Robots with High-Speed Trot Gait](https://github.com/pat92fr/FootTrajectoryPlanner/blob/main/00-Papers/Leg_Trajectory_Planning_for_Quadruped_Robots_with_.pdf) comparing Bezier and Spline curves. 
 
-![Foot trajectory](https://github.com/pat92fr/FootTrajectoryPlanner/blob/main/00-Papers/Figure%2012.%20The%20Bezier%20curve%20trajectory.png)
+<p align="center"><img src="https://github.com/pat92fr/FootTrajectoryPlanner/blob/main/00-Papers/Figure%2012.%20The%20Bezier%20curve%20trajectory.png"></p>
+<p align="center">*XZ Position plot at 1m/s.*</p>
 
 So, I have defined a **2D Bezier curve** with 12 control points. 2D coordinates of control points depends on robot actual velocities, swing and stance durations (with overlay), and swing and stance heights. I got quite good tracking and the raisonable ground impact force at the touch down. 
 
@@ -55,9 +55,8 @@ where :
 - Vx : Desired robot velocity along X axis (longitudinal) (m/s)
 - n = 12 : number of control points
     
-![Foot trajectory](https://github.com/pat92fr/FootTrajectoryPlanner/blob/main/02-Result/XZ%20Bezier.png)
-
-*XZ Position plot at 1m/s.*
+<p align="center"><img src="https://github.com/pat92fr/FootTrajectoryPlanner/blob/main/02-Result/XZ%20Bezier.png"></p>
+<p align="center">*XZ Position plot at 1m/s.*</p>
 
 In the §3.1, author compares Spline and Bezier curve trajectories : *Comparing the swing phase trajectory acceleration of spline curve with that of the Bézier curve as shown in Figure 13, a curve with continuous acceleration cannot be obtained. Moreover, the acceleration of the Bézier curve at a contact point with the stance phase cannot reach 0, which means that there will be an impact force on the ground, and the maximum value of its acceleration curve is also larger than that in the spline curve. As to the spline curve trajectory, it will be more difficult to obtain the trajectory.*
 
