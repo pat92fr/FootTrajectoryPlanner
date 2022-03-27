@@ -29,16 +29,16 @@ So, I have defined a 2D Bezier curve with 12 control points. 2D coordinates of c
 |Pn|X|Z|
 |---|---|---|
 |P0|-Vx\*Tstance/2|0|
-|P1|-Vx\*Tstance/2-Vx\*Tswing/(n-1)|0|
-|P2|-Vx\*Tstance/2-2.Vx\*Tswing/(n-1)|Hswing|
-|P3|-Vx\*Tstance/2-2.Vx\*Tswing/(n-1)|Hswing|
-|P4|-Vx\*Tstance/2-2.Vx\*Tswing/(n-1)|Hswing|
+|P1|-Vx\*(Tstance/2-Tswing/(n-1))|0|
+|P2|-Vx\*(Tstance/2-2\*Tswing/(n-1))|Hswing|
+|P3|-Vx\*(Tstance/2-2\*Tswing/(n-1))|Hswing|
+|P4|-Vx\*(Tstance/2-2\*Tswing/(n-1))|Hswing|
 |P5|0|Hswing|
 |P6|0|Hswing|
 |P7|0|1.2\*Hswing|
-|P8|Vx\*Tstance/2+2.Vx\*Tswing/(n-1)|1.2\*Hswing|
-|P9|Vx\*Tstance/2+2.Vx\*Tswing/(n-1)|1.2\*Hswing|
-|P10|Vx\*Tstance/2+Vx\*Tswing/(n-1)|0|
+|P8|Vx\*(Tstance/2+2\*Tswing/(n-1))|1.2\*Hswing|
+|P9|Vx\*(Tstance/2+2\*Tswing/(n-1))|1.2\*Hswing|
+|P10|Vx\*(Tstance/2+Tswing/(n-1))|0|
 |P11|Vx\*Tstance/2|0|
 
 where :
