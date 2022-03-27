@@ -111,8 +111,16 @@ where :
 
 - dVz/dt : derivative of Z velocity of stance phase trajectory = Hstance\*PI/Tstance
 
-The swing phase trajectory based on these two Bezier curves features a continuous acceleration along both X and Z axis.
+The swing phase trajectory based on these two Bezier curves features a continuous acceleration along both X and Z axis. *Houra!*
 
-![Foot trajectory](https://github.com/pat92fr/FootTrajectoryPlanner/blob/main/02-Result/XZ%20Dual%20Bezier%20Acceleration.png)
+![Dual Bezier Acceleration](https://github.com/pat92fr/FootTrajectoryPlanner/blob/main/02-Result/XZ%20Dual%20Bezier%20Acceleration.png)
 
 *Acceleration plot at 1m/s.*
+
+The result is very close of the spline curve acceleration along X and Z axis.
+
+![Spline Acceleration](https://github.com/pat92fr/FootTrajectoryPlanner/blob/main/00-Papers/Figure%2013.%20The%20spline%20curve%20acceleration%20X%20and%20Z%20axis.png)
+
+*Acceleration plot at 1..4m/s.*
+
+
