@@ -1,4 +1,14 @@
 # FootTrajectoryPlanner
  Legged robot foot's trajectory planner based on Bezier curves
  
- ![Foot trajectory](https://github.com/pat92fr/FootTrajectoryPlanner/blob/main/02-Result/2022-03-27%20X%20and%20Y%20Bezier%20Curves%20proposed%20by%20Pat92fr.png?raw=true)
+## Usage
+Run foot_trajectory_planner.py, select the type of trajectory, and adjust parameters (velocity, stride duration, overlay and stance/swing heights.
+![Foot trajectory](https://github.com/pat92fr/FootTrajectoryPlanner/blob/main/02-Result/2022-03-27%20X%20and%20Y%20Bezier%20Curves%20proposed%20by%20Pat92fr.png?raw=true)
+
+The control points of Beziers curves maybe adapted. See line 200+ in the Python script.
+
+The inverse kinematic function maybe adapted. It is designed for my 5-bar legged robot called Felin. See IK Python script.
+
+## Purpose
+
+
