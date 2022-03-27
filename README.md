@@ -59,7 +59,7 @@ where :
 
 In the §3.1, author compares Spline and Bezier curve trajectories : *Comparing the swing phase trajectory acceleration of spline curve with that of the Bézier curve as shown in Figure 13, a curve with continuous acceleration cannot be obtained. Moreover, the acceleration of the Bézier curve at a contact point with the stance phase cannot reach 0, which means that there will be an impact force on the ground, and the maximum value of its acceleration curve is also larger than that in the spline curve. As to the spline curve trajectory, it will be more difficult to obtain the trajectory.*
 
-The swing phase trajectory based on Bezier curve features a continuous acceleration along X direction, but there are **velocity and acceleration discontinuities at both ends alon Z direction**.
+The swing phase trajectory based on Bezier curve features a continuous acceleration along X direction, but there are **velocity and acceleration discontinuities at both ends along Z direction**.
 
 <p align="center"><img src="https://github.com/pat92fr/FootTrajectoryPlanner/blob/main/02-Result/XZ%20Bezier%20Acceleration.png"></p>
 <p align="center">Figure. XZ Foot end acceleration plot at 1m/s.</p>
