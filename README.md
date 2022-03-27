@@ -1,7 +1,7 @@
 # FootTrajectoryPlanner
- Legged robot foot's trajectory planner based on **Bezier curves**.
+ This is a tool for legged robot foot's trajectory planning, based on **Bezier curves**.
  
- Features :
+ Tool features :
  - Compute XZ position velocity and acceleration of foot end according desired robot velocity and gait parameters.
  - Compute position, velocity, and acceleration of joints based on IK and robot geometry.
  - Four different PRESETs including MIT-like Bezier curve.
