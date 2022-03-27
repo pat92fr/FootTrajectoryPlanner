@@ -2,7 +2,13 @@
  Legged robot foot's trajectory planner based on Bezier curves
  
 ## Usage
-Run foot_trajectory_planner.py, select the type of trajectory, and adjust parameters: velocity, stride duration, overlay and stance/swing heights.
+Run foot_trajectory_planner.py, select the type of trajectory, and adjust parameters:
+- robot velocity (mm/s)
+- stride duration (ms)
+- overlay (%)
+- stance/swing heights (mm)
+- robot standing height Z0 (mm)
+
 ![Foot trajectory](https://github.com/pat92fr/FootTrajectoryPlanner/blob/main/02-Result/2022-03-27%20X%20and%20Y%20Bezier%20Curves%20proposed%20by%20Pat92fr.png?raw=true)
 
 The control points of Beziers curves maybe adapted. See line 200+ in the Python script.
@@ -42,6 +48,7 @@ So, I have defined a 2D Bezier curve with 12 control points. 2D coordinates of c
 |P11|Vx\*Tstance/2|0|
 
 where :
+
 -Tstance : Stance phase duration (s)
 -Tswing : Swing phase duration (s)
 -Hswing : Swing phase height (m)
