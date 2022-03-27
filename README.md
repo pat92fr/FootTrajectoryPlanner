@@ -26,6 +26,28 @@ My second implementation was based on the paper [Leg Trajectory Planning for Qua
 
 So, I have defined a 2D Bezier curve with 12 control points. 2D coordinates of control points depends on robot actual velocities, swing and stance durations (with overlay), and swing and stance heights. I got quite good tracking and the raisonable ground impact force at the touch down. 
 
+|Pn|X|Z|
+|---|---|---|
+|P0|-Vx.Tstance/2|0|
+|P1|-Vx.Tstance/2-Vx.Tswing/(n-1)|0|
+|P2|-Vx.Tstance/2-2.Vx.Tswing/(n-1)|Hswing|
+|P3|-Vx.Tstance/2-2.Vx.Tswing/(n-1)|Hswing|
+|P4|-Vx.Tstance/2-2.Vx.Tswing/(n-1)|Hswing|
+|P5|0|Hswing|
+|P6|0|Hswing|
+|P7|0|1.2\*Hswing|
+|P8|Vx.Tstance/2+2.Vx.Tswing/(n-1)|1.2\*Hswing|
+|P9|Vx.Tstance/2+2.Vx.Tswing/(n-1)|1.2\*Hswing|
+|P10|Vx.Tstance/2+Vx.Tswing/(n-1)|0|
+|P11|Vx.Tstance/2|0|
+
+where :
+*Tstance : Stance phase duration (s)
+*Tswing : Swing phase duration (s)
+*Hswing : Swing phase height (m)
+*Vx : Desired robot velocity along X axis (longitudinal) (m/s)
+*n = 12
+    
 ![Foot trajectory](https://github.com/pat92fr/FootTrajectoryPlanner/blob/main/02-Result/XZ%20Bezier.png)
 
 *Plot at 1m/s.*
