@@ -122,16 +122,20 @@ The swing phase trajectory based on these two Bezier curves features a continuou
 <p align="center"><img src="https://github.com/pat92fr/FootTrajectoryPlanner/blob/main/02-Result/XZ%20Dual%20Bezier%20Acceleration.png"></p>
 <p align="center">Figure. XZ Foot end acceleration at 1m/s.</p>
 
-The result is very close of the spline curve acceleration along X and Z direction.
+
+Finaly, the result is very close of the spline curve acceleration along X and Z direction.
 
 <p align="center"><img src="https://github.com/pat92fr/FootTrajectoryPlanner/blob/main/00-Papers/Figure%2013.%20The%20spline%20curve%20acceleration%20X%20and%20Z%20axis.png"></p>
-<p align="center">XZ Foot end acceleration at 1..4m/s;  (a) The acceleration in the X diretion for the spline curve trajectory;  (b) The acceleration in the Z direction for the spline curve trajectory.</p>
+<p align="center">XZ Foot end acceleration at 1..4m/s;  <br>
+ (a) The acceleration in the X diretion for the spline curve trajectory;  <br>
+ (b) The acceleration in the Z direction for the spline curve trajectory.</p>
 
 
 ![Foot trajectory](https://github.com/pat92fr/FootTrajectoryPlanner/blob/main/02-Result/2022-03-27%20X%20and%20Y%20Bezier%20Curves%20proposed%20by%20Pat92fr.png?raw=true)
 <p align="center">Screenshot. Two Bezier curves analysis.</p>
 
-### Circle trajectory (test)
+
+### Circle trajectory (test purpose)
 
 ![Foot trajectory](https://github.com/pat92fr/FootTrajectoryPlanner/blob/main/02-Result/2022-03-27%20Circle%20trajectory%20test.png?raw=true)
 <p align="center">Screenshot. Circle analysis.</p>
