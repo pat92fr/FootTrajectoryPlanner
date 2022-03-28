@@ -11,6 +11,10 @@ Kinematic :
 +  Felin IK and geometry : four legged robot with 5-bar legs and three motors per leg (coxa + two hips in parallel).
 +  Tiger IK and geometry : four legged robot with three motors per leg (serial)
  
+ |Felin IK|Tiger IK|
+ |---|---|
+ |![Felin](https://github.com/pat92fr/FootTrajectoryPlanner/blob/main/02-Result/felin.png?raw=true)|![Tiger](https://github.com/pat92fr/FootTrajectoryPlanner/blob/main/02-Result/tiger.png?raw=true)|
+ 
 ## Usage
 Run the Python3 script **foot_trajectory_planner.py**, select the type of trajectory, and adjust parameters:
 - Desired robot velocity (mm/s)
