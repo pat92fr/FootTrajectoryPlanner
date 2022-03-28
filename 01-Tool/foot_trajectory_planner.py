@@ -113,6 +113,16 @@ class gui:
 		self.scales["Z0"].set(130)
 		self.row += 1
 
+		# radio button
+		leg_name = ["5-bar 3DOF Leg","Serial 3DOF Leg"]
+		leg_value = ["5-bar","serial"]
+		self.variables["Leg"] = StringVar()
+		self.variables["Leg"].set(leg_value[0])
+		for i in range(2):
+			self.radio["Leg"+str(i)] = Radiobutton(self.lf_inputs,variable=self.variables["Leg"],text=leg_name[i],value=leg_value[i],command=self.update)
+			self.radio["Leg"+str(i)].grid(column = 0, row = self.row, sticky='w')
+			self.row += 1
+
 		self.row = 0
 	
 		self.lf_graphs.columnconfigure(0, weight=1)
@@ -386,7 +396,11 @@ class gui:
 			foot_position[1,0] =  0.0
 			foot_position[2,0] =  self.z_dataset[current]
 			#print(foot_position)
-			leg_joint_angles = ik.ik_conventional_leg(foot_position) # A,B
+			leg_joint_angles = None
+			if self.variables["Leg"].get() == '5-bar':
+				leg_joint_angles = ik.ik_5bar_leg(foot_position) # A,B
+			if self.variables["Leg"].get() == 'serial':
+				leg_joint_angles = ik.ik_serial_leg(foot_position) # A,B
 			final_joint_angles = np.degrees(leg_joint_angles)
 			self.coxa_dataset.append(final_joint_angles[2,0])
 			self.front_hips_dataset.append(final_joint_angles[0,0])

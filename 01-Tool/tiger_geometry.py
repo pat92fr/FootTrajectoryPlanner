@@ -1,10 +1,7 @@
-#felin_geometry.py
+#tiger_geometry.py
 
-# Felin 2022
-# 12-DOF with 5-bar legs
-
-# Front Hip to Rear Hip distance = 62mm
-H2H_distance = 0.062 #m
+# Tiger 2022
+# 12-DOF
 
 # Coxa Length = 60mm
 Lc = 0.060 #m

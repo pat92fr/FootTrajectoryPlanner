@@ -104,8 +104,8 @@ def ik_5bar_leg(foot_position): # input 3x1 vector  (x,y,z,1) in METERS, where x
 	return np.array((A1,A2,A3)).reshape((3,1))
 
 
-# return 3x1 vector (S1 (front hip servo), S2 (rear hip  servo), S3 (coxa servo)) in RADIANS
-def ik_conventional_leg(foot_position): # input 3x1 vector  (x,y,z,1) in METERS, where x axis pointing forward, y axis pointing int or exterior, and z axis pointing upward
+# return 3x1 vector (S1 (hip servo), S2 (knee servo), S3 (coxa servo)) in RADIANS
+def ik_serial_leg(foot_position): # input 3x1 vector  (x,y,z,1) in METERS, where x axis pointing forward, y axis pointing int or exterior, and z axis pointing upward
 	log("foot_position:\n"+str(foot_position))
 	# coxa to foot distance
 	CF = math.sqrt((foot_position[1,0]+tiger_geometry.Lc)**2+foot_position[2,0]**2)
