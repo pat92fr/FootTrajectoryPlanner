@@ -32,6 +32,8 @@ Run the Python3 script **foot_trajectory_planner.py**, select the type of trajec
 ## Purpose
 I was looking for a **smooth swing phase trajectory** for my DIY legged robot, that suits a large range of robot velocity (from 0 to 1 m/s and more). This trajectory shall be computed in real time, and should minimize foot velocity and acceleration, and joint velocity and acceleration, in order to get a good tracking and minimal ground impact force at the begining of the stance phase. 
 
+## Foot end trajectories
+
 ### Basic curve using math
 My very first implementation was based on a **cos(t)** for both the stance and the swing phases. Such a trajectory causes velocity and acceleration discontinuities at the begining and the end of the stance/swing phases. I got a poor tracking in real experiments, and a high ground impact force at the touch down.
 
@@ -143,6 +145,15 @@ Finaly, the result is very close of the spline curve acceleration along X and Z 
 
 ![Foot trajectory](https://github.com/pat92fr/FootTrajectoryPlanner/blob/main/02-Result/2022-03-27%20Circle%20trajectory%20test.png?raw=true)
 <p align="center">Screenshot. Circle analysis.</p>
+
+## Experiments
+
+### Setpoint check
+Here is a screenshot of the XZ setpoint foot position, based on the implementation of the **X+Z Bezier curves**, at differents robot velocity.
+![Foot trajectory](https://github.com/pat92fr/FootTrajectoryPlanner/blob/main/03-Experiment/plot1.png?raw=true)
+<p align="center">Screenshot. XZ setpoint</p>
+
+
 
 
 
