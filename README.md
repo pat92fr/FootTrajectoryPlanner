@@ -148,10 +148,11 @@ Finaly, the result is very close of the spline curve acceleration along X and Z 
 
 ## Experiments
 
-### Setpoint check
-Here is a screenshot of the XZ setpoint foot position, based on the implementation of the **X+Z Bezier curves**, at differents robot velocity.
+### XZ foot position setpoint check before powering up robot joints
+Here is a screenshot of the XZ foot position setpoint, based on the implementation of the **X+Z Bezier curves**, at differents robot velocity.
+
 ![Foot trajectory](https://github.com/pat92fr/FootTrajectoryPlanner/blob/main/03-Experiment/plot1.png?raw=true)
-<p align="center">Screenshot. XZ setpoint</p>
+<p align="center">Screenshot. XZ foot position setpoint</p>
 
 
 
