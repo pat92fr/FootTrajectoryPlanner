@@ -397,10 +397,16 @@ class gui:
 			foot_position[2,0] =  self.z_dataset[current]
 			#print(foot_position)
 			leg_joint_angles = None
+			joint_name_1 = ""
+			joint_name_2 = ""
 			if self.variables["Leg"].get() == '5-bar':
 				leg_joint_angles = ik.ik_5bar_leg(foot_position) # A,B
+				joint_name_1 = "FHIP"
+				joint_name_2 = "RHIP"
 			if self.variables["Leg"].get() == 'serial':
 				leg_joint_angles = ik.ik_serial_leg(foot_position) # A,B
+				joint_name_1 = " HIP"
+				joint_name_2 = "KNEE"
 			final_joint_angles = np.degrees(leg_joint_angles)
 			self.coxa_dataset.append(final_joint_angles[2,0])
 			self.front_hips_dataset.append(final_joint_angles[0,0])
@@ -656,11 +662,11 @@ class gui:
 				fill="#00FF00"
 			)
 
-		self.viewports['Joint_Position'].create_rectangle(6,10,180,90,fill="white",outline="white")
-		self.viewports['Joint_Position'].create_text(10,10,anchor="nw",justify='left',text="Front HIPS max "+str(int(round(front_hips_max,0)))+"°", fill="#FF0000", font=('Consolas 11 bold'))
-		self.viewports['Joint_Position'].create_text(10,30,anchor="nw",justify='left',text="           min "+str(int(round(front_hips_min,0)))+"°", fill="#FF0000", font=('Consolas 11 bold'))
-		self.viewports['Joint_Position'].create_text(10,50,anchor="nw",justify='left',text="Rear HIPS  max "+str(int(round(rear_hips_max,0)))+"°", fill="#00AA00", font=('Consolas 11 bold'))
-		self.viewports['Joint_Position'].create_text(10,70,anchor="nw",justify='left',text="           min "+str(int(round(rear_hips_min,0)))+"°", fill="#00AA00", font=('Consolas 11 bold'))
+		self.viewports['Joint_Position'].create_rectangle(6,10,110,90,fill="white",outline="white")
+		self.viewports['Joint_Position'].create_text(10,10,anchor="nw",justify='left',text=joint_name_1+" max "+str(int(round(front_hips_max,0)))+"°", fill="#FF0000", font=('Consolas 11 bold'))
+		self.viewports['Joint_Position'].create_text(10,30,anchor="nw",justify='left',text="     min "+str(int(round(front_hips_min,0)))+"°", fill="#FF0000", font=('Consolas 11 bold'))
+		self.viewports['Joint_Position'].create_text(10,50,anchor="nw",justify='left',text=joint_name_2+" max "+str(int(round(rear_hips_max,0)))+"°", fill="#00AA00", font=('Consolas 11 bold'))
+		self.viewports['Joint_Position'].create_text(10,70,anchor="nw",justify='left',text="     min "+str(int(round(rear_hips_min,0)))+"°", fill="#00AA00", font=('Consolas 11 bold'))
 
 		# .. for joint velocity
 		jvx_view_size = self.viewports['Joint_Velocity'].winfo_width()
@@ -705,11 +711,11 @@ class gui:
 				fill="#00FF00"
 			)
 
-		self.viewports['Joint_Velocity'].create_rectangle(6,10,200,90,fill="white",outline="white")
-		self.viewports['Joint_Velocity'].create_text(10,10,anchor="nw",justify='left',text="Front HIPS max "+str(int(round(v_front_hips_max,0)))+" °/s", fill="#FF0000", font=('Consolas 11 bold'))
-		self.viewports['Joint_Velocity'].create_text(10,30,anchor="nw",justify='left',text="           min "+str(int(round(v_front_hips_min,0)))+" °/s", fill="#FF0000", font=('Consolas 11 bold'))
-		self.viewports['Joint_Velocity'].create_text(10,50,anchor="nw",justify='left',text="Rear HIPS  max "+str(int(round(v_rear_hips_max,0)))+" °/s", fill="#00AA00", font=('Consolas 11 bold'))
-		self.viewports['Joint_Velocity'].create_text(10,70,anchor="nw",justify='left',text="           min "+str(int(round(v_rear_hips_min,0)))+" °/s", fill="#00AA00", font=('Consolas 11 bold'))
+		self.viewports['Joint_Velocity'].create_rectangle(6,10,150,90,fill="white",outline="white")
+		self.viewports['Joint_Velocity'].create_text(10,10,anchor="nw",justify='left',text=joint_name_1+" max "+str(int(round(v_front_hips_max,0)))+" °/s", fill="#FF0000", font=('Consolas 11 bold'))
+		self.viewports['Joint_Velocity'].create_text(10,30,anchor="nw",justify='left',text="     min "+str(int(round(v_front_hips_min,0)))+" °/s", fill="#FF0000", font=('Consolas 11 bold'))
+		self.viewports['Joint_Velocity'].create_text(10,50,anchor="nw",justify='left',text=joint_name_2+" max "+str(int(round(v_rear_hips_max,0)))+" °/s", fill="#00AA00", font=('Consolas 11 bold'))
+		self.viewports['Joint_Velocity'].create_text(10,70,anchor="nw",justify='left',text="     min "+str(int(round(v_rear_hips_min,0)))+" °/s", fill="#00AA00", font=('Consolas 11 bold'))
 
 		# .. for joint acceleration
 		jax_view_size = self.viewports['Joint_Acceleration'].winfo_width()
@@ -754,11 +760,11 @@ class gui:
 				fill="#00FF00"
 			)
 
-		self.viewports['Joint_Acceleration'].create_rectangle(6,10,230,90,fill="white",outline="white")
-		self.viewports['Joint_Acceleration'].create_text(10,10,anchor="nw",justify='left',text="Front HIPS max "+str(int(round(a_front_hips_max,0)))+" °/s²", fill="#FF0000", font=('Consolas 11 bold'))
-		self.viewports['Joint_Acceleration'].create_text(10,30,anchor="nw",justify='left',text="           min "+str(int(round(a_front_hips_min,0)))+" °/s²", fill="#FF0000", font=('Consolas 11 bold'))
-		self.viewports['Joint_Acceleration'].create_text(10,50,anchor="nw",justify='left',text="Rear HIPS  max "+str(int(round(a_rear_hips_max,0)))+" °/s²", fill="#00AA00", font=('Consolas 11 bold'))
-		self.viewports['Joint_Acceleration'].create_text(10,70,anchor="nw",justify='left',text="           min "+str(int(round(a_rear_hips_min,0)))+" °/s²", fill="#00AA00", font=('Consolas 11 bold'))
+		self.viewports['Joint_Acceleration'].create_rectangle(6,10,180,90,fill="white",outline="white")
+		self.viewports['Joint_Acceleration'].create_text(10,10,anchor="nw",justify='left',text=joint_name_1+" max "+str(int(round(a_front_hips_max,0)))+" °/s²", fill="#FF0000", font=('Consolas 11 bold'))
+		self.viewports['Joint_Acceleration'].create_text(10,30,anchor="nw",justify='left',text="     min "+str(int(round(a_front_hips_min,0)))+" °/s²", fill="#FF0000", font=('Consolas 11 bold'))
+		self.viewports['Joint_Acceleration'].create_text(10,50,anchor="nw",justify='left',text=joint_name_2+" max "+str(int(round(a_rear_hips_max,0)))+" °/s²", fill="#00AA00", font=('Consolas 11 bold'))
+		self.viewports['Joint_Acceleration'].create_text(10,70,anchor="nw",justify='left',text="     min "+str(int(round(a_rear_hips_min,0)))+" °/s²", fill="#00AA00", font=('Consolas 11 bold'))
 
 	def viewport_scale(self,a,a_min,a_max,view_size,axis,margin = 0.00):
 		
