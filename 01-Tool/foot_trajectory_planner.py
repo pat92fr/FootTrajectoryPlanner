@@ -386,7 +386,7 @@ class gui:
 			foot_position[1,0] =  0.0
 			foot_position[2,0] =  self.z_dataset[current]
 			#print(foot_position)
-			leg_joint_angles = ik.ik2(foot_position) # A,B
+			leg_joint_angles = ik.ik_conventional_leg(foot_position) # A,B
 			final_joint_angles = np.degrees(leg_joint_angles)
 			self.coxa_dataset.append(final_joint_angles[2,0])
 			self.front_hips_dataset.append(final_joint_angles[0,0])
