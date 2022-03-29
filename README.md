@@ -148,11 +148,34 @@ Finaly, the result is very close of the spline curve acceleration along X and Z 
 
 ## Experiments
 
-### XZ foot position setpoint check before powering up robot joints
-Here is a screenshot of the XZ foot position setpoint, based on the implementation of the **X+Z Bezier curves**, at differents robot velocity.
+### XZ foot setpoint position check before powering up robot joints
+Here is a screenshot of the XZ foot setpoint position, based on the implementation of the **X+Z Bezier curves**, at differents robot velocity.
 
 ![Foot trajectory](https://github.com/pat92fr/FootTrajectoryPlanner/blob/main/03-Experiment/plot1.png?raw=true)
 <p align="center">Screenshot. XZ foot position setpoint</p>
+
+### XZ foot actual vs setpoint positions at about 0.8m/s
+Here is a screenshot of the XZ foot actual and setpoint position, based on the implementation of the **X+Z Bezier curves**, at a quite high robot velocity.
+
+![Foot trajectory](https://github.com/pat92fr/FootTrajectoryPlanner/blob/main/03-Experiment/plot2-0-240-100.png?raw=true)
+<p align="center">Screenshot. XZ foot position setpoint</p>
+
+![Foot trajectory](https://github.com/pat92fr/FootTrajectoryPlanner/blob/main/03-Experiment/plot4-0-240-100.png?raw=true)
+<p align="center">Screenshot. XZ foot position setpoint</p>
+
+### XZ foot actual vs setpoint positions during deceleration
+Here is a screenshot of the XZ foot actual and setpoint position, based on the implementation of the **X+Z Bezier curves**, at a different robot velocities.
+
+![Foot trajectory](https://github.com/pat92fr/FootTrajectoryPlanner/blob/main/03-Experiment/plot3-0-240-100.png?raw=true)
+<p align="center">Screenshot. XZ foot position setpoint</p>
+
+### Conclusion
+
+The **X+Z Bezier curves** solution is not yet perfect! There is still a XZ position overshoot at the touch down causing a ground impact. Foot position tracking at quite a high velocity is not too bad though, and depends on the foot trajectory curve and also on the brushless motor controler setup (Kp and Kd of the position control loop, Kp and Ki of the FOC current loop, FOC implementation). That require further analysis, but those first experiments are interesting.
+
+
+
+
 
 
 
