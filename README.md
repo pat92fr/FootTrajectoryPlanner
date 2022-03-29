@@ -169,9 +169,15 @@ Here is a screenshot of the XZ foot actual and setpoint position, based on the i
 ![Foot trajectory](https://github.com/pat92fr/FootTrajectoryPlanner/blob/main/03-Experiment/plot3-0-240-100.png?raw=true)
 <p align="center">Screenshot. XZ foot position setpoint</p>
 
+
+Here is a short video of test :
+
+[![IMAGE ALT TEXT](http://img.youtube.com/vi/t2Dbn3NhXfY/0.jpg)](http://www.youtube.com/watch?v=t2Dbn3NhXfY "Felin 2022 (foot trajectory planning)")
+<p align="center">Recording. XZ foot actual vs setpoint positions during acceleration and deceleration</p>
+
 ### Conclusion
 
-The **X+Z Bezier curves** solution is not yet perfect! There is still a XZ position overshoot at the touch down causing a ground impact. Foot position tracking at quite a high velocity is not too bad though, and depends on the foot trajectory curve and also on the brushless motor controler setup (Kp and Kd of the position control loop, Kp and Ki of the FOC current loop, FOC implementation). That require further analysis, but those first experiments are interesting.
+The **X+Z Bezier curves** solution is not yet perfect! There is still a XZ position overshoot at the begining of the stance phase, that could cause a ground impact at the touch down. Foot position tracking at quite a high velocity is not too bad though, and depends on the foot trajectory curve and also on the brushless motor controler setup (Kp and Kd of the position control loop, Kp and Ki of the FOC current loop, FOC implementation). The PID has been set for the a robot walking on the ground, that maybe not be optimal when the robot is not in contact with the ground. Well, that require further analysis, but those first experiments are interesting.
 
 
 
