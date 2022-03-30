@@ -6,10 +6,10 @@
 # Coxa Length = 60mm
 Lc = 0.060 #m
 
-# Femur Length = 80mm
+# Femur Length = 120mm
 Lf = 0.120 #m
 
-# Tibia Length = 160mm
+# Tibia Length = 150mm
 Lt = 0.150 #m
 
 # Min Tibia+Femur elongation

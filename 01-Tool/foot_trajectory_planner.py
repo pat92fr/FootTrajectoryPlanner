@@ -56,11 +56,11 @@ class gui:
 		self.row = 0
 
 		# radio button
-		curve_name = ["Circle(test)","Cosinus","XZ Bezier curve","X+Z Bezier curves"]
-		curve_value = ["Circle","Cosinus","MIT","Pat92fr"]
+		curve_name = ["Circle(test)","Cosinus","XZ Bezier curve","X+Z Bezier curves","X+Z Bezier curves II"]
+		curve_value = ["Circle","Cosinus","MIT","Pat92fr","Pat92frII"]
 		self.variables["Curve"] = StringVar()
 		self.variables["Curve"].set(curve_value[0])
-		for i in range(4):
+		for i in range(len(curve_name)):
 			self.radio["Curve"+str(i)] = Radiobutton(self.lf_inputs,variable=self.variables["Curve"],text=curve_name[i],value=curve_value[i],command=self.update)
 			self.radio["Curve"+str(i)].grid(column = 0, row = self.row, sticky='w')
 			self.row += 1
@@ -270,6 +270,50 @@ class gui:
 					0.0  	# C12
 			]
 
+		if self.variables["Curve"].get() == "Pat92frII":
+
+			xn = 8 # point count in x_points
+			A = Vx_mps*self.T_swing_s/(xn-1)
+			B = 2.00*A
+
+			# X Bezier curve
+			x_points = [ 
+				x_begin,  	# C0 begin
+				x_begin-A,  # C1 zero speed
+				x_begin-B,  # C2 zero speed
+				x_end/2,
+				x_end/2,
+				x_end+B,  	# C3 zero speed
+				x_end+A,  	# C4 zero speed
+				x_end,     	# C5
+			]
+
+			zn = 17 # point count in x_points
+			A = 1.00/(zn-1)*H_stance_m*math.pi*self.T_swing_s/self.T_stance_s
+			B = 2.00*A
+			C = 2.00*B
+
+			# Z Bezier curve
+			z_points = [ 
+					0.0,  	# C0
+					A,  	# C1
+					B,  	# C2
+					H_swing_m*1.0,  # C3
+					H_swing_m*1.0,  # C3
+					H_swing_m*1.0,  # C3
+					H_swing_m*1.0,  # C3
+					H_swing_m*1.0,  # C3
+					H_swing_m*1.0,  # C4
+					H_swing_m*1.0,  # C5
+					H_swing_m*1.2,  # C6
+					H_swing_m*1.2,  # C7
+					H_swing_m*1.0,  # C8
+					C,  # C9
+					B,  	# C10
+					A,  	# C11
+					0.0  	# C12
+			]
+
 		# build data
 		self.step_s = 0.0005 # s 
 
@@ -315,6 +359,10 @@ class gui:
 				z = p[2,0]
 			
 			if self.variables["Curve"].get() == "Pat92fr":
+				x = bezier.bezier1D(multiplier,x_points)
+				z = bezier.bezier1D(multiplier,z_points)
+
+			if self.variables["Curve"].get() == "Pat92frII":
 				x = bezier.bezier1D(multiplier,x_points)
 				z = bezier.bezier1D(multiplier,z_points)
 
