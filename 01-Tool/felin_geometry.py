@@ -10,7 +10,7 @@ H2H_distance = 0.062 #m
 Lc = 0.060 #m
 
 # Femur Length = 80mm
-Lf = 0.080 #m
+Lf = 0.100 #m test
 
 # Tibia Length = 160mm
 Lt = 0.160 #m

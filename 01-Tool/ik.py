@@ -142,7 +142,7 @@ def ik_serial_leg(foot_position): # input 3x1 vector  (x,y,z,1) in METERS, where
 	z = -L * math.sin(Alpha)
 	log("x: "+str(round(x,3)))		
 	log("z: "+str(round(z,3)))		
-	# compute angle from HIP to femur in coxa plance
+	# compute angle from HIP to femur in coxa plane
 	A1 = Alpha + cos_law_A(L,tiger_geometry.Lf,tiger_geometry.Lt)
 	log("A1: "+str(round(math.degrees(A1),0))+"deg")
 	# compute angle from femur to tibia in coxa plance
